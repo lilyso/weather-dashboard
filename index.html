@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Weather Dashboard</title>
+    <meta name="description" content="Worldwide Weather Dashboard" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,200;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="bg-gradient-to-r from-green-400 to-blue-500">
+      <h1 class="px-8 text-4xl text-white text-center p-8">
+        My Weather Dashboard
+      </h1>
+    </header>
+    <main class="flex flex-wrap m-2">
+      <aside class="flex-2 p-8 border-2 border-blue-300 rounded-md m-2">
+        <h2>Search for a city:</h2>
+        <form class="">
+          <input
+            class="block border-2 border-blue-400 border-opacity-100 rounded-md"
+            type="text"
+            id="user-input"
+            name="user-input"
+          />
+          <button
+            class="
+              text-white
+              m-1
+              px-12
+              border-2 border-blue-400 border-opacity-100
+              rounded-md
+              bg-gradient-to-r
+              from-green-500
+              to-blue-500
+            "
+          >
+            SEARCH
+          </button>
+        </form>
+        <section id="saved-city" class="">
+          <h3>city</h3>
+        </section>
+      </aside>
+      <section class="flex-1 p-8 border-2 border-blue-300 rounded-md m-2">
+        <h2 id="current-city" class="">CURRENT CITY DAY/MONTH/YEAR</h2>
+        <section id="forcast">
+          <h3>5 Day Forcast</h3>
+        </section>
+      </section>
+    </main>
+    <script src="assets/js/script.js" async defer></script>
+  </body>
+</html>

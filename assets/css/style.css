@@ -1,0 +1,12 @@
+:root {
+  --darkcolor: #274c77;
+  --mediumcolor: #6096ba;
+  --mutedcolor: #6096ba;
+  --lightcolor: #e7ecef;
+  --brightcolor: #a3cef1;
+  --lightercolor: #eaeaea;
+}
+
+body {
+  font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
