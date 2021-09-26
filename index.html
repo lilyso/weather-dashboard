@@ -6,6 +6,7 @@
     <title>Weather Dashboard</title>
     <meta name="description" content="Worldwide Weather Dashboard" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://use.fontawesome.com/a9d6b3654b.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -25,7 +26,19 @@
       </h1>
     </header>
     <main class="flex flex-wrap m-2">
-      <aside class="lg:flex-2 p-8 border-2 border-blue-300 rounded-md m-2">
+      <aside
+        class="
+          w-full
+          md:
+          flex-1
+          lg:
+          flex-1
+          p-8
+          border-2 border-blue-300
+          rounded-md
+          m-2
+        "
+      >
         <h3 class="text-xl m-1">Search for a city</h3>
         <form id="search-form">
           <input
@@ -58,7 +71,17 @@
         </form>
         <section id="saved-city" class=""></section>
       </aside>
-      <section class="lg:flex-1 p-8 border-2 border-blue-300 rounded-md m-2">
+      <section
+        class="
+          md:
+          flex-grow
+          lg:flex-grow
+          p-8
+          border-2 border-blue-300
+          rounded-md
+          m-2
+        "
+      >
         <h2 class="text-3xl text-blue-400 font-semibold">
           <span id="current-city"></span> <span id="current-date"></span
           ><span id="weather-icon"></span>
@@ -67,43 +90,51 @@
           <h3 class="p-1">Temp: <span id="temp"></span>&#8451;</h3>
           <h3 class="p-1">Wind: <span id="wind"></span>MPH</h3>
           <h3 class="p-1">Humidity: <span id="humid"></span>%</h3>
-          <h3 class="p-1">UV Index: <span id="uvi" class="uv-index"></span></h3>
+          <h3 class="p-1">
+            UV Index:
+            <span id="uvi" class="uv-index py-1 px-2 rounded-md"></span>
+          </h3>
         </section>
         <section id="forcast">
-          <h2 class="text-2xl p-1 text-green-500">5 Day Forcast</h2>
-          <section class="card1">
-            <h3 id="day2"></h3>
-            <h4>Temp:</h4>
-            <h4>Wind:</h4>
-            <h4>Humidity:</h4>
-          </section>
-          <section class="card2">
-            <h3 id="day3"></h3>
-            <h4>Temp:</h4>
-            <h4>Wind:</h4>
-            <h4>Humidity:</h4>
-          </section>
-          <section class="card3">
-            <h3 id="day4"></h3>
-            <h4>Temp:</h4>
-            <h4>Wind:</h4>
-            <h4>Humidity:</h4>
-          </section>
-          <section class="card4">
-            <h3 id="day5"></h3>
-            <h4>Temp:</h4>
-            <h4>Wind:</h4>
-            <h4>Humidity:</h4>
-          </section>
-          <section class="card5">
-            <h3 id="day6"></h3>
-            <h4>Temp:</h4>
-            <h4>Wind:</h4>
-            <h4>Humidity:</h4>
-          </section>
+          <h2 class="text-2xl py-3 text-green-500">5 Day Forcast</h2>
+          <div class="flex flex-wrap">
+            <section class="card1 rounded-md m-1 p-4 bg-green-400">
+              <h3 id="day2"></h3>
+              <h4>Temp: <span id="temp2"></span></h4>
+              <h4>Wind: <span id="temp2"></span></h4>
+              <h4>Humidity: <span id="temp2"></span></h4>
+            </section>
+            <section class="card2 rounded-md m-1 p-4 bg-green-400">
+              <h3 id="day3"></h3>
+              <h4>Temp: <span id="temp2"></span></h4>
+              <h4>Wind: <span id="temp2"></span></h4>
+              <h4>Humidity: <span id="temp2"></span></h4>
+            </section>
+            <section class="card3 rounded-md m-1 p-4 bg-green-400">
+              <h3 id="day4"></h3>
+              <h4>Temp: <span id="temp3"></span></h4>
+              <h4>Wind: <span id="wind3"></span></h4>
+              <h4>Humidity: <span id="hum3"></span></h4>
+            </section>
+            <section class="card4 rounded-md m-1 p-4 bg-green-400">
+              <h3 id="day5"></h3>
+              <h4>Temp: <span id="temp5"></span></h4>
+              <h4>Wind: <span id="wind5"></span></h4>
+              <h4>Humidity: <span id="hum5"></span></h4>
+            </section>
+            <section class="card5 rounded-md m-1 p-4 bg-green-400">
+              <h3 id="day6"></h3>
+              <h4>Temp: <span id="temp6"></span></h4>
+              <h4>Wind: <span id="wind6"></span></h4>
+              <h4>Humidity: <span id="hum6"></span></h4>
+            </section>
+          </div>
         </section>
       </section>
     </main>
+    <footer class="text-white bg-blue-400 text-center p-12">
+      <h5>Made by Lily So 2021</h5>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
     <script src="assets/js/script.js"></script>
   </body>
