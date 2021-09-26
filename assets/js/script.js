@@ -61,6 +61,7 @@ formEl.addEventListener("submit", (event) => {
   }
 });
 
+// API Request
 async function getWeather() {
   var errorMessage = document.querySelector("#error-message");
   errorMessage.textContent = "";
@@ -81,6 +82,8 @@ async function getWeather() {
     `https://api.openweathermap.org/data/2.5/onecall?lat=${fivedayForecast.city.coord.lat}&lon=${fivedayForecast.city.coord.lon}&appid=${apiKey}&units=metric`
   ).then((response) => response.json());
   console.log(oneCall);
+
+  //Current city conditions
   var displayCity = userInput.value.toUpperCase();
   currentCity.textContent = displayCity;
   tempVal.textContent = oneCall.current.temp;
@@ -89,6 +92,7 @@ async function getWeather() {
   uviVal.textContent = oneCall.current.uvi;
   uvIndexLevel(parseInt(oneCall.current.uvi));
 
+  // 5 Day Forcast conditions
   var tempCard = document.querySelectorAll(".temp");
   var windCard = document.querySelectorAll(".wind");
   var humidCard = document.querySelectorAll(".humid");
@@ -104,16 +108,9 @@ async function getWeather() {
     var forcastData = oneCall.daily[i];
     humidCard[i].textContent = forcastData.humidity;
   }
-  //   displayForecast();
 }
 
-// function displayForecast() {
-//   var tempCard = document.querySelector(".temp");
-//   for (let i = 0; i < 5; i++) {
-//     var forcastData = oneCall.daily[i];
-//     tempCard.textContent = forcastData.temp;
-//   }
-// }
+// UV Index Rating
 var currentClass;
 function uvIndexLevel(uvi) {
   if (currentClass) uviVal.classList.remove(currentClass);
