@@ -27,20 +27,20 @@
 // Current date
 document.querySelector("#current-date").textContent =
   moment().format("DD/MM/YYYY");
-//Five day forcast dates
-document.querySelector("#day2").textContent = moment()
+// Five day forcast dates
+document.querySelector("#date1").textContent = moment()
   .add(1, "day")
   .format("DD/MM/YYYY");
-document.querySelector("#day3").textContent = moment()
+document.querySelector("#date2").textContent = moment()
   .add(2, "day")
   .format("DD/MM/YYYY");
-document.querySelector("#day4").textContent = moment()
+document.querySelector("#date3").textContent = moment()
   .add(3, "day")
   .format("DD/MM/YYYY");
-document.querySelector("#day5").textContent = moment()
+document.querySelector("#date4").textContent = moment()
   .add(4, "day")
   .format("DD/MM/YYYY");
-document.querySelector("#day6").textContent = moment()
+document.querySelector("#date5").textContent = moment()
   .add(5, "day")
   .format("DD/MM/YYYY");
 
@@ -52,8 +52,9 @@ var tempVal = document.querySelector("#temp");
 var windVal = document.querySelector("#wind");
 var humidVal = document.querySelector("#humid");
 var uviVal = document.querySelector("#uvi");
+var oneCall;
 
-formEl.addEventListener("submit", function (event) {
+formEl.addEventListener("submit", (event) => {
   event.preventDefault();
   if (userInput.value) {
     getWeather();
@@ -61,42 +62,75 @@ formEl.addEventListener("submit", function (event) {
 });
 
 async function getWeather() {
+  var errorMessage = document.querySelector("#error-message");
+  errorMessage.textContent = "";
   var fivedayForecast = await fetch(
     `https://api.openweathermap.org/data/2.5/forecast?q=${userInput.value}&appid=${apiKey}&units=metric`
-  ).then((response) => response.json());
-  console.log(fivedayForecast);
-
+  )
+    .then((response) => {
+      if (!response.ok) {
+        throw Error(response.statusText);
+      }
+      return response;
+    })
+    .then((response) => response.json())
+    .catch((error) => {
+      errorMessage.textContent = "*City Not Found";
+    });
   var oneCall = await fetch(
     `https://api.openweathermap.org/data/2.5/onecall?lat=${fivedayForecast.city.coord.lat}&lon=${fivedayForecast.city.coord.lon}&appid=${apiKey}&units=metric`
   ).then((response) => response.json());
   console.log(oneCall);
-
   var displayCity = userInput.value.toUpperCase();
   currentCity.textContent = displayCity;
   tempVal.textContent = oneCall.current.temp;
   windVal.textContent = oneCall.current.wind_speed;
   humidVal.textContent = oneCall.current.humidity;
   uviVal.textContent = oneCall.current.uvi;
-  uvIndexLevel();
+  uvIndexLevel(parseInt(oneCall.current.uvi));
+
+  var tempCard = document.querySelectorAll(".temp");
+  var windCard = document.querySelectorAll(".wind");
+  var humidCard = document.querySelectorAll(".humid");
+  for (let i = 0; i < 5; i++) {
+    var forcastData = oneCall.daily[i];
+    tempCard[i].textContent = forcastData.temp.max;
+  }
+  for (let i = 0; i < 5; i++) {
+    var forcastData = oneCall.daily[i];
+    windCard[i].textContent = forcastData.wind_speed;
+  }
+  for (let i = 0; i < 5; i++) {
+    var forcastData = oneCall.daily[i];
+    humidCard[i].textContent = forcastData.humidity;
+  }
   //   displayForecast();
 }
 
 // function displayForecast() {
-//   var foreCards = [];
+//   var tempCard = document.querySelector(".temp");
+//   for (let i = 0; i < 5; i++) {
+//     var forcastData = oneCall.daily[i];
+//     tempCard.textContent = forcastData.temp;
+//   }
 // }
-
-function uvIndexLevel() {
-  var colorIndex = parseInt(uviVal.textContent);
-  console.log(colorIndex);
-  if (colorIndex <= 2) {
+var currentClass;
+function uvIndexLevel(uvi) {
+  if (currentClass) uviVal.classList.remove(currentClass);
+  if (uvi <= 2) {
     uviVal.classList.add("bg-green-300");
-  } else if (colorIndex >= 3 && colorIndex <= 5) {
+    currentClass = "bg-green-300";
+  } else if (uvi <= 5) {
     uviVal.classList.add("bg-yellow-300");
-  } else if (colorIndex >= 6 && colorIndex <= 7) {
+    currentClass = "bg-yellow-300";
+  } else if (uvi <= 7) {
     uviVal.classList.add("bg-yellow-600");
-  } else if (colorIndex >= 8 && colorIndex <= 10) {
+    currentClass = "bg-yellow-600";
+  } else if (uvi <= 10) {
     uviVal.classList.add("bg-red-500");
-  } else if (colorIndex >= 11) {
+    currentClass = "bg-red-500";
+  } else {
     uviVal.classList.add("bg-red-700");
+    currentClass = "bg-red-700";
   }
 }

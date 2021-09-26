@@ -69,6 +69,7 @@
             SEARCH
           </button>
         </form>
+        <div class="italic p-1" id="error-message"></div>
         <section id="saved-city" class=""></section>
       </aside>
       <section
@@ -88,7 +89,7 @@
         </h2>
         <section class="text-xl">
           <h3 class="p-1">Temp: <span id="temp"></span>&#8451;</h3>
-          <h3 class="p-1">Wind: <span id="wind"></span>MPH</h3>
+          <h3 class="p-1">Wind: <span id="wind"></span>KPH</h3>
           <h3 class="p-1">Humidity: <span id="humid"></span>%</h3>
           <h3 class="p-1">
             UV Index:
@@ -98,41 +99,42 @@
         <section id="forcast">
           <h2 class="text-2xl py-3 text-green-500">5 Day Forcast</h2>
           <div class="flex flex-wrap">
+            <section id="forecast"></section>
             <section class="card1 rounded-md m-1 p-4 bg-green-400">
-              <h3 id="day2"></h3>
-              <h4>Temp: <span id="temp2"></span></h4>
-              <h4>Wind: <span id="temp2"></span></h4>
-              <h4>Humidity: <span id="temp2"></span></h4>
+              <h3 id="date1"></h3>
+              <h4>Temp: <span class="temp"></span>&#8451;</h4>
+              <h4>Wind: <span class="wind"></span>KPH</h4>
+              <h4>Humidity: <span class="humid"></span>%</h4>
             </section>
             <section class="card2 rounded-md m-1 p-4 bg-green-400">
-              <h3 id="day3"></h3>
-              <h4>Temp: <span id="temp2"></span></h4>
-              <h4>Wind: <span id="temp2"></span></h4>
-              <h4>Humidity: <span id="temp2"></span></h4>
+              <h3 id="date2"></h3>
+              <h4>Temp: <span class="temp"></span>&#8451;</h4>
+              <h4>Wind: <span class="wind"></span>KPH</h4>
+              <h4>Humidity: <span class="humid"></span>%</h4>
             </section>
             <section class="card3 rounded-md m-1 p-4 bg-green-400">
-              <h3 id="day4"></h3>
-              <h4>Temp: <span id="temp3"></span></h4>
-              <h4>Wind: <span id="wind3"></span></h4>
-              <h4>Humidity: <span id="hum3"></span></h4>
+              <h3 id="date3"></h3>
+              <h4>Temp: <span class="temp"></span>&#8451;</h4>
+              <h4>Wind: <span class="wind"></span>KPH</h4>
+              <h4>Humidity: <span class="humid"></span>%</h4>
             </section>
             <section class="card4 rounded-md m-1 p-4 bg-green-400">
-              <h3 id="day5"></h3>
-              <h4>Temp: <span id="temp5"></span></h4>
-              <h4>Wind: <span id="wind5"></span></h4>
-              <h4>Humidity: <span id="hum5"></span></h4>
+              <h3 id="date4"></h3>
+              <h4>Temp: <span class="temp"></span>&#8451;</h4>
+              <h4>Wind: <span class="wind"></span>KPH</h4>
+              <h4>Humidity: <span class="humid"></span>%</h4>
             </section>
             <section class="card5 rounded-md m-1 p-4 bg-green-400">
-              <h3 id="day6"></h3>
-              <h4>Temp: <span id="temp6"></span></h4>
-              <h4>Wind: <span id="wind6"></span></h4>
-              <h4>Humidity: <span id="hum6"></span></h4>
+              <h3 id="date5"></h3>
+              <h4>Temp: <span class="temp"></span>&#8451;</h4>
+              <h4>Wind: <span class="wind"></span>KPH</h4>
+              <h4>Humidity: <span class="humid"></span>%</h4>
             </section>
           </div>
         </section>
       </section>
     </main>
-    <footer class="text-white bg-blue-400 text-center p-12">
+    <footer class="text-white bg-blue-500 text-center p-12">
       <h5>Made by Lily So 2021</h5>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
