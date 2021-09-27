@@ -52,6 +52,7 @@
             type="text"
             id="user-input"
             name="user-input"
+            value="sydney"
           />
           <button
             class="
@@ -83,10 +84,13 @@
           m-2
         "
       >
-        <h2 class="text-3xl text-blue-400 font-semibold">
-          <span id="current-city"></span> <span id="current-date"></span
-          ><span id="weather-icon"></span>
-        </h2>
+        <div>
+          <h2 class="text-3xl text-blue-400 font-semibold inline">
+            <span id="current-city"></span>
+            <span id="current-date"></span>
+          </h2>
+          <img src="" id="current-icon" class="px-4 inline" />
+        </div>
         <section class="text-xl">
           <h3 class="p-1">Temp: <span id="temp"></span>&#8451;</h3>
           <h3 class="p-1">Wind: <span id="wind"></span>KPH</h3>
@@ -97,36 +101,42 @@
           </h3>
         </section>
         <section id="forcast">
-          <h2 class="text-2xl py-3 text-green-500">5 Day Forcast</h2>
+          <h2 class="text-2xl py-3 text-green-500 font-semibold">
+            5 Day Forcast
+          </h2>
           <div class="flex flex-wrap">
-            <section id="forecast"></section>
             <section class="card1 rounded-md m-1 p-4 bg-green-400">
-              <h3 id="date1"></h3>
-              <h4>Temp: <span class="temp"></span>&#8451;</h4>
+              <h3 class="text-center" id="date1"></h3>
+              <img src="" class="weather-icon p-1 mx-auto" />
+              <h4>Temp: <span class="temp font-semibold"></span>&#8451;</h4>
               <h4>Wind: <span class="wind"></span>KPH</h4>
               <h4>Humidity: <span class="humid"></span>%</h4>
             </section>
             <section class="card2 rounded-md m-1 p-4 bg-green-400">
-              <h3 id="date2"></h3>
-              <h4>Temp: <span class="temp"></span>&#8451;</h4>
+              <h3 class="text-center" id="date2"></h3>
+              <img src="" class="weather-icon p-1 mx-auto" />
+              <h4>Temp: <span class="temp font-semibold"></span>&#8451;</h4>
               <h4>Wind: <span class="wind"></span>KPH</h4>
               <h4>Humidity: <span class="humid"></span>%</h4>
             </section>
             <section class="card3 rounded-md m-1 p-4 bg-green-400">
-              <h3 id="date3"></h3>
-              <h4>Temp: <span class="temp"></span>&#8451;</h4>
+              <h3 class="text-center" id="date3"></h3>
+              <img src="" class="weather-icon p-1 mx-auto" />
+              <h4>Temp: <span class="temp font-semibold"></span>&#8451;</h4>
               <h4>Wind: <span class="wind"></span>KPH</h4>
               <h4>Humidity: <span class="humid"></span>%</h4>
             </section>
             <section class="card4 rounded-md m-1 p-4 bg-green-400">
-              <h3 id="date4"></h3>
-              <h4>Temp: <span class="temp"></span>&#8451;</h4>
+              <h3 class="text-center" id="date4"></h3>
+              <img src="" class="weather-icon p-1 mx-auto" />
+              <h4>Temp: <span class="temp font-semibold"></span>&#8451;</h4>
               <h4>Wind: <span class="wind"></span>KPH</h4>
               <h4>Humidity: <span class="humid"></span>%</h4>
             </section>
             <section class="card5 rounded-md m-1 p-4 bg-green-400">
-              <h3 id="date5"></h3>
-              <h4>Temp: <span class="temp"></span>&#8451;</h4>
+              <h3 class="text-center" id="date5"></h3>
+              <img src="" class="weather-icon p-1 mx-auto" />
+              <h4>Temp: <span class="temp font-semibold"></span>&#8451;</h4>
               <h4>Wind: <span class="wind"></span>KPH</h4>
               <h4>Humidity: <span class="humid"></span>%</h4>
             </section>

@@ -52,6 +52,7 @@ var tempVal = document.querySelector("#temp");
 var windVal = document.querySelector("#wind");
 var humidVal = document.querySelector("#humid");
 var uviVal = document.querySelector("#uvi");
+var currentIcon = document.querySelector("#current-icon");
 var oneCall;
 
 formEl.addEventListener("submit", (event) => {
@@ -92,24 +93,62 @@ async function getWeather() {
   uviVal.textContent = oneCall.current.uvi;
   uvIndexLevel(parseInt(oneCall.current.uvi));
 
+  currentWeatherIcon = oneCall.current.weather[0].main;
+  if (currentWeatherIcon === "Clear") {
+    currentIcon.src = "assets/images/icons8-sun-50.png";
+  } else if (currentWeatherIcon === "Clouds") {
+    currentIcon.src = "assets/images/icons8-partly-cloudy-day-50.png";
+  } else if (currentWeatherIcon.main === "Drizzle") {
+    currentIcon.src = "assets/images/icons8-drizzle-50-2.png";
+  } else if (currentWeatherIcon === "Rain") {
+    currentIcon.src = "assets/images/icons8-rain-50.png";
+  } else if (currentWeatherIcon === "Thunderstorm") {
+    currentIcon.src = "assets/images/icons8-storm-50.png";
+  } else if (currentWeatherIcon === "Snow") {
+    currentIcon.src = "assets/images/icons8-snow-50.png";
+  } else {
+    console.log(currentWeatherIcon);
+  }
+
   // 5 Day Forcast conditions
   var tempCard = document.querySelectorAll(".temp");
   var windCard = document.querySelectorAll(".wind");
   var humidCard = document.querySelectorAll(".humid");
+  var weatherEl = document.querySelectorAll(".weather-icon");
+
   for (let i = 0; i < 5; i++) {
     var forcastData = oneCall.daily[i];
     tempCard[i].textContent = forcastData.temp.max;
-  }
-  for (let i = 0; i < 5; i++) {
-    var forcastData = oneCall.daily[i];
     windCard[i].textContent = forcastData.wind_speed;
-  }
-  for (let i = 0; i < 5; i++) {
-    var forcastData = oneCall.daily[i];
     humidCard[i].textContent = forcastData.humidity;
-  }
-}
 
+    var forecastIcon = forcastData.weather[0].main;
+    if (forecastIcon === "Clear") {
+      weatherEl[i].src = "assets/images/icons8-sun-50.png";
+    } else if (forecastIcon === "Clouds") {
+      weatherEl[i].src = "assets/images/icons8-partly-cloudy-day-50.png";
+    } else if (forecastIcon === "Drizzle") {
+      weatherEl[i].src = "assets/images/icons8-drizzle-50-2.png";
+    } else if (forecastIcon === "Rain") {
+      weatherEl[i].src = "assets/images/icons8-rain-50.png";
+    } else if (forecastIcon === "Thunderstorm") {
+      weatherEl[i].src = "assets/images/icons8-storm-50.png";
+    } else if (forecastIcon === "Snow") {
+      weatherEl[i].src = "assets/images/icons8-snow-50.png";
+    } else {
+      console.log(forecastIcon);
+    }
+  }
+  //   }
+  //   for (let i = 0; i < 5; i++) {
+  //     var forecastIcon = oneCall.weather[i];
+  //     weatherEl[i].classList.add()
+  //     function weatherIcon() {
+  //         if (forecastIcon.main = "Clouds") {
+
+  //         }
+  //       }
+}
 // UV Index Rating
 var currentClass;
 function uvIndexLevel(uvi) {
