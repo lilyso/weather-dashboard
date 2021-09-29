@@ -6,7 +6,6 @@
     <title>Weather Dashboard</title>
     <meta name="description" content="Worldwide Weather Dashboard" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://use.fontawesome.com/a9d6b3654b.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -28,7 +27,7 @@
     <main class="flex flex-wrap m-2">
       <aside
         class="
-          w-full
+          w-1/2
           md:
           flex-1
           lg:
@@ -37,6 +36,7 @@
           border-2 border-blue-300
           rounded-md
           m-2
+          text-center
         "
       >
         <h3 class="text-xl m-1">Search for a city</h3>
@@ -65,13 +65,15 @@
               from-green-500
               to-blue-500
               w-full
+              text-center
             "
           >
             SEARCH
           </button>
         </form>
         <div class="italic p-1" id="error-message"></div>
-        <section id="saved-city" class=""></section>
+        <h4 class="italic">Search history</h4>
+        <div id="saved-city" class="text-center"></div>
       </aside>
       <section
         class="
@@ -146,6 +148,11 @@
     </main>
     <footer class="text-white bg-blue-500 text-center p-12">
       <h5>Made by Lily So 2021</h5>
+      <br />
+      <h5 class="inline">
+        Icons from
+        <a href="https://icons8.com/" target="_blank"><em>icons8</em></a>
+      </h5>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
     <script src="assets/js/script.js"></script>
