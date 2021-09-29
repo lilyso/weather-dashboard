@@ -14,9 +14,13 @@ body {
 .cityBtn {
   padding: 0px 10px;
   margin: 5px;
-  width: 50%;
+  width: 75%;
   border: 1px solid rgba(96, 165, 250);
   border-radius: 5px;
   background-color: rgba(59, 130, 246);
   color: white;
+}
+
+.cityBtn:hover {
+  opacity: 0.75;
 }

@@ -9,6 +9,7 @@ var uviVal = document.querySelector("#uvi");
 var currentIcon = document.querySelector("#current-icon");
 var oneCall;
 var cityArray = document.querySelector("#saved-city");
+var clearStorage = document.querySelector("#clear-board");
 
 // Current date
 document.querySelector("#current-date").textContent =
@@ -54,11 +55,27 @@ function saveCities(cityName) {
   }
 }
 
-// Event listener submit city
+// Event listener search submit
 formEl.addEventListener("submit", (event) => {
   event.preventDefault();
   if (userInput.value) {
     getWeather(userInput.value);
+  }
+});
+
+// Event listener search history buttons
+cityArray.addEventListener("click", (event) => {
+  var targetCity = event.target.textContent;
+  if (targetCity) {
+    getWeather(targetCity);
+  }
+});
+
+// Event listener clear dashboard link
+clearStorage.addEventListener("click", (event) => {
+  localStorage.clear();
+  while (cityArray.firstChild) {
+    cityArray.removeChild(cityArray.firstChild);
   }
 });
 
@@ -170,14 +187,14 @@ function uvIndexLevel(uvi) {
     currentClass = "bg-red-700";
   }
 
-  storedCity = localStorage.getItem("city");
-  storedCity = JSON.parse(storedCity);
-  console.log(storedCity);
-  // if (storedCity.includes(userInput.value.toUpperCase()) === false) {
-  var newCity = document.createElement("button");
-  newCity.classList.add("cityBtn");
-  newCity.innerHTML = userInput.value.toUpperCase();
-  cityArray.appendChild(newCity);
-  // }
-  // return;
+  // storedCity = localStorage.getItem("city");
+  // storedCity = JSON.parse(storedCity);
+  // console.log(storedCity);
+  // // if (storedCity.includes(userInput.value.toUpperCase()) === false) {
+  // var newCity = document.createElement("button");
+  // newCity.classList.add("cityBtn");
+  // newCity.innerHTML = userInput.value.toUpperCase();
+  // cityArray.appendChild(newCity);
+  // // }
+  // // return;
 }
