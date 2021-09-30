@@ -1,6 +1,6 @@
 # My Weather Dashboard
 
-> A weather dashboard to track the forcast for multiple cities.
+> A weather dashboard to track the forecast for multiple cities.
 > Live demo [_here_](https://lilyso.github.io/weather-dashboard/).
 
 ## Table of Contents
@@ -17,26 +17,25 @@
 
 ## General Information
 
-- Users can keep track of weather forcast from around the world. It is great for travellers who want to keep track of weather for multiple cities by saving their destinations or favourite cities in the dashboard.
-
-Each search is saved in a button for the user to refer back to when needed.
+- Users can keep track of weather forecast from around the world. It is great for travellers who want to keep track of weather for multiple cities as their search history is saved can be accessed again as buttons.
 
 ## Technologies Used
 
 - HTML5
 - CSS5
-- Vanilla Javascript
+- Javascript
 - tailwindcss v2.2.15
 
 ## Features
 
-- Search for up to 200,000 cities around the world
-- Save mulitple destinations for reference
-- Current and 5 day forcast available
+- Search up to 200,000 cities around the world
+- Mulitple destinations saved for reference
+- Current and 5 day forecast available
 
 ## Screenshots
 
-![Example screenshot](./img/screenshot.png)
+![Weather Dashboard Desktop](assets/images/Weather Dashboard Desktop.png)
+![Weather Dashboard Mobile](assets/images/Weather Dashboard Mobile.png)
 
 ## Setup
 
@@ -49,7 +48,8 @@ Project is: _in progress_
 ## Room for Improvement
 
 - Ability to save current weather conditions on the dashboard for at least two cities. Currently, only 1 city can be viewed at a time.
-- Ability to see more weather conditions such light cloud, sun shower, light snow, etc. Conditions have been simplified for this project.
+- Ability to see more weather conditions such as light cloud, sun shower, light snow, etc. Conditions have been simplified for this project.
+- Ability to remove a saved search one at a time. Currently, only all saved cities can be cleared all at once.
 
 ## Acknowledgements
 
