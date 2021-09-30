@@ -1,3 +1,4 @@
+// Global variables
 var apiKey = "65f855456871827b60b4fe75048ff499";
 var userInput = document.querySelector("#user-input");
 var formEl = document.querySelector("#search-form");
@@ -7,14 +8,14 @@ var windVal = document.querySelector("#wind");
 var humidVal = document.querySelector("#humid");
 var uviVal = document.querySelector("#uvi");
 var currentIcon = document.querySelector("#current-icon");
-var oneCall;
 var cityArray = document.querySelector("#saved-city");
 var clearStorage = document.querySelector("#clear-board");
+var oneCall;
 
-// Current date
+// Generate current date
 document.querySelector("#current-date").textContent =
   moment().format("DD/MM/YYYY");
-// Five day forcast dates
+// Generate 5 day forcast dates
 for (let index = 1; index < 6; index++) {
   document.querySelector("#date" + index).textContent = moment()
     .add(index, "day")
@@ -52,7 +53,7 @@ function saveCities(cityName) {
     localStorage.setItem("city", JSON.stringify(storedCity));
     var newCity = document.createElement("button");
     newCity.classList.add("cityBtn");
-    newCity.innerHTML = userInput.value.toUpperCase();
+    newCity.textContent = userInput.value.toUpperCase();
     cityArray.appendChild(newCity);
   }
 }
@@ -118,7 +119,7 @@ async function getWeather(city) {
   uviVal.textContent = oneCall.current.uvi;
   uvIndexLevel(parseInt(oneCall.current.uvi));
 
-  // Populate current City Weather Icon
+  // Populate current city weather icon
   currentWeatherIcon = oneCall.current.weather[0].main;
   if (currentWeatherIcon === "Clear") {
     currentIcon.src = "assets/images/icons8-sun-50.png";

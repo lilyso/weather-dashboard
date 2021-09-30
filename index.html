@@ -87,6 +87,10 @@
           rounded-md
           m-2
           text-center
+          md:text-left
+          lg:text-left
+          xl:text-left
+          2xl:text-left
         "
       >
         <div>
@@ -97,7 +101,9 @@
           <img src="" id="current-icon" class="px-4 inline" />
         </div>
         <section class="text-xl">
-          <h3 class="p-1">Temp: <span id="temp"></span>&#8451;</h3>
+          <h3 class="p-1 text-4xl font-semibold">
+            <span id="temp"></span>&#8451;
+          </h3>
           <h3 class="p-1">Wind: <span id="wind"></span>KPH</h3>
           <h3 class="p-1">Humidity: <span id="humid"></span>%</h3>
           <h3 class="p-1">
@@ -106,7 +112,18 @@
           </h3>
         </section>
         <section id="forcast">
-          <h2 class="text-center text-2xl py-3 text-green-500 font-semibold">
+          <h2
+            class="
+              text-center text-2xl
+              py-3
+              text-green-500
+              font-semibold
+              md:text-left
+              lg:text-left
+              xl:text-left
+              2xl:text-left
+            "
+          >
             5 Day Forcast
           </h2>
           <div
@@ -118,38 +135,58 @@
               2xl:flex-nowrap
             "
           >
-            <section class="w-full card1 rounded-md m-1 p-4 bg-green-400">
-              <h3 class="text-center" id="date1"></h3>
+            <section
+              class="text-center w-full card1 rounded-md m-1 p-4 bg-green-400"
+            >
+              <h3 id="date1"></h3>
               <img src="" class="weather-icon p-1 mx-auto" />
-              <h4>Temp: <span class="temp font-semibold"></span>&#8451;</h4>
+              <h4 class="font-semibold text-xl">
+                <span class="temp"></span>&#8451;
+              </h4>
               <h4>Wind: <span class="wind"></span>KPH</h4>
               <h4>Humidity: <span class="humid"></span>%</h4>
             </section>
-            <section class="w-full card2 rounded-md m-1 p-4 bg-green-400">
-              <h3 class="text-center" id="date2"></h3>
+            <section
+              class="text-center w-full card2 rounded-md m-1 p-4 bg-green-400"
+            >
+              <h3 id="date2"></h3>
               <img src="" class="weather-icon p-1 mx-auto" />
-              <h4>Temp: <span class="temp font-semibold"></span>&#8451;</h4>
+              <h4 class="font-semibold text-xl">
+                <span class="temp"></span>&#8451;
+              </h4>
               <h4>Wind: <span class="wind"></span>KPH</h4>
               <h4>Humidity: <span class="humid"></span>%</h4>
             </section>
-            <section class="w-full card3 rounded-md m-1 p-4 bg-green-400">
-              <h3 class="text-center" id="date3"></h3>
+            <section
+              class="text-center w-full card3 rounded-md m-1 p-4 bg-green-400"
+            >
+              <h3 id="date3"></h3>
               <img src="" class="weather-icon p-1 mx-auto" />
-              <h4>Temp: <span class="temp font-semibold"></span>&#8451;</h4>
+              <h4 class="font-semibold text-xl">
+                <span class="temp"></span>&#8451;
+              </h4>
               <h4>Wind: <span class="wind"></span>KPH</h4>
               <h4>Humidity: <span class="humid"></span>%</h4>
             </section>
-            <section class="w-full card4 rounded-md m-1 p-4 bg-green-400">
-              <h3 class="text-center" id="date4"></h3>
+            <section
+              class="text-center w-full card4 rounded-md m-1 p-4 bg-green-400"
+            >
+              <h3 id="date4"></h3>
               <img src="" class="weather-icon p-1 mx-auto" />
-              <h4>Temp: <span class="temp font-semibold"></span>&#8451;</h4>
+              <h4 class="font-semibold text-xl">
+                <span class="temp"></span>&#8451;
+              </h4>
               <h4>Wind: <span class="wind"></span>KPH</h4>
               <h4>Humidity: <span class="humid"></span>%</h4>
             </section>
-            <section class="w-full card5 rounded-md m-1 p-4 bg-green-400">
-              <h3 class="text-center" id="date5"></h3>
+            <section
+              class="text-center w-full card5 rounded-md m-1 p-4 bg-green-400"
+            >
+              <h3 id="date5"></h3>
               <img src="" class="weather-icon p-1 mx-auto" />
-              <h4>Temp: <span class="temp font-semibold"></span>&#8451;</h4>
+              <h4 class="font-semibold text-xl">
+                <span class="temp"></span>&#8451;
+              </h4>
               <h4>Wind: <span class="wind"></span>KPH</h4>
               <h4>Humidity: <span class="humid"></span>%</h4>
             </section>
