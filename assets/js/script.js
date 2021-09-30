@@ -37,8 +37,6 @@ function cityButton() {
 }
 cityButton();
 
-// button = target textcontent = city
-
 // Local storage cities
 function saveCities(cityName) {
   storedCity = localStorage.getItem("city");
@@ -52,6 +50,10 @@ function saveCities(cityName) {
   } else {
     storedCity.push(cityName.toUpperCase());
     localStorage.setItem("city", JSON.stringify(storedCity));
+    var newCity = document.createElement("button");
+    newCity.classList.add("cityBtn");
+    newCity.innerHTML = userInput.value.toUpperCase();
+    cityArray.appendChild(newCity);
   }
 }
 
@@ -186,15 +188,4 @@ function uvIndexLevel(uvi) {
     uviVal.classList.add("bg-red-700");
     currentClass = "bg-red-700";
   }
-
-  // storedCity = localStorage.getItem("city");
-  // storedCity = JSON.parse(storedCity);
-  // console.log(storedCity);
-  // // if (storedCity.includes(userInput.value.toUpperCase()) === false) {
-  // var newCity = document.createElement("button");
-  // newCity.classList.add("cityBtn");
-  // newCity.innerHTML = userInput.value.toUpperCase();
-  // cityArray.appendChild(newCity);
-  // // }
-  // // return;
 }
