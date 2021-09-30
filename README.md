@@ -35,7 +35,7 @@
 ## Screenshots
 
 ![Weather Dashboard Desktop](assets/images/Weather-Dashboard-Desktop.png)
-![Weather Dashboard Mobile](assets/images/Weather-Dashboard-Desktop.png)
+![Weather Dashboard Mobile](assets/images/Weather-Dashboard-Mobile.png)
 
 ## Setup
 
