@@ -14,6 +14,7 @@
 - [Room for Improvement](#room-for-improvement)
 - [Acknowledgements](#acknowledgements)
 - [Contact](#contact)
+- [License](#license)
 
 ## General Information
 
@@ -58,3 +59,7 @@ Project is: _in progress_
 ## Contact
 
 Created by [@lilyso](https://github.com/lilyso).
+
+## License
+
+- MIT
